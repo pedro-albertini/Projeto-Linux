@@ -30,13 +30,13 @@ Agora instale o NGINX:
 ```
 ## Ativando o NGINX
 
-Apos a instalação, o primeiro passo é iniciar o serviço NGINX
+Apos a instalação, o primeiro passo é iniciar o serviço NGINX:
 
 ```bash
   sudo systemctl start nginx
 ```
 
-Agora habilite ele para iniciar junto com a inicialização do sistema
+Agora habilite ele para iniciar junto com a inicialização do sistema:
 
 ```bash
   sudo systemctl enable nginx
@@ -81,7 +81,7 @@ Para teste se está reinciando automaticamente:
 
 ## Criando o Bot do Telegram
 
-Na barra de busca do Telegram execute '@BotFather' e crie um bot a partir dele
+Na barra de busca do Telegram execute '@BotFather' e crie um bot a partir dele:
 
   - /start: começa a criação do bot
   - /newbot: precisará colocar algumas informações do bot
@@ -95,19 +95,19 @@ Para obter o Id do chat do seu bot, acesse o endereço a seguir alterando o seu 
 
 ## Criando o Script de Monitoramento
 
-Navegue até o diretório que script vai ficar
+Navegue até o diretório que script irá ficar:
 
 ```bash
   cd /usuario
 ```
 
-Crie o script e coloque o conteúdo nele
+Crie o script e coloque o conteúdo nele:
 
 ```bash
   sudo nano script.py
 ```
 
-Agora de permissão pro script ser executado
+Agora de permissão pro script ser executado:
 
 ```bash
   chmod +x script.py
@@ -115,3 +115,20 @@ Agora de permissão pro script ser executado
 
 ## Automatizando o Script e Registros(logs)
 
+Edite a lista de tarefas:
+
+```bash
+  sudo crontab -e
+```
+
+Adicione a tarefa a ser realizada e guarde o registro no arquivo.log do script no caminho que desejar, no caso dos arquivos .py o caminho aonde o python está na sua máquina também precisa estar no comando:
+
+```bash
+  ***** /usr/bin/python3 /usuario/script.py >> /var/log/script.log
+```
+
+Verifique se o agendamento foi feito corretamente
+
+```bash
+  sudo crontab -l
+```
