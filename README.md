@@ -6,12 +6,13 @@ Esse projeto faz parte do programa de bolsas da Compass UOL na trilha de DevSecO
 Ele envolve a criação e configuração de um servidor localmente, automação de monitoramento e notificações via telegram. Sempre que ouver quedas ou desligamento do servidor web, o script enviará automaticamente uma notificação a cada minuto alertando sobre o problema via telegram.
 ## Indice
 
- - [Instalando o NGINX](#instalando-o-NGINX)
- - [Ativação NGINX](https://github.com/matiassingers/awesome-rea)
- - [Configuração SystemD](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+ - [Instalando o NGINX](#Instalando-o-NGINX)
+ - [Ativando o NGINX](#Ativando-o-NGINX)
+ - [Configurando o SystemD](#Configurando-o-DystemD)
  - [Pagina WEB](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Ativação NGINX](https://github.com/matiassingers/awesome-rea)
- - [Configuração SystemD](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+ - [Criando o Bot do Telegram](#Criando-o-Bot-do-Telegram)
+ - [Criando o Script de Monitoramento](#Criando-o-Script-de-Monitoramento)
+ - [Automatizando o Script e Registros(logs)](#Automatizando-o-Script-e-Registros(logs))
 
 
 ## Instalando o NGINX
@@ -27,8 +28,21 @@ Agora instale o NGINX:
 ```bash
   sudo apt-get install nginx
 ```
+## Ativando o NGINX
 
-## Configuração SystemD
+Apos a instalação, o primeiro passo é iniciar o serviço NGINX
+
+```bash
+  sudo systemctl start nginx
+```
+
+Agora habilite ele para iniciar junto com a inicialização do sistema
+
+```bash
+  sudo systemctl enable nginx
+```
+
+## Configurando o SystemD
 
 Para que o nginx reinicialize automaticamente caso haja queda, precisamos editar o arquivo de serviço dele:
 
@@ -65,22 +79,39 @@ Para teste se está reinciando automaticamente:
 
 
 
-## Uso/Exemplos
+## Criando o Bot do Telegram
 
-```javascript
-import Component from 'my-project'
+Na barra de busca do Telegram execute '@BotFather' e crie um bot a partir dele
 
-function App() {
-  return <Component />
-}
-```
+  - /start: começa a criação do bot
+  - /newbot: precisará colocar algumas informações do bot
+  - Recebido o TOKEN seu bot estará criado
 
-
-## Rodando os testes
-
-Para rodar os testes, rode o seguinte comando
+Para obter o Id do chat do seu bot, acesse o endereço a seguir alterando o seu TOKEN:
 
 ```bash
-  npm run test
+  https://api.telegram.org/bot<TOKEN>/getUpdates
+```
+
+## Criando o Script de Monitoramento
+
+Navegue até o diretório que script vai ficar
+
+```bash
+  cd /usuario
+```
+
+Crie o script e coloque o conteúdo nele
+
+```bash
+  sudo nano script.py
+```
+
+## Automatizando o Script e Registros(logs)
+
+Agora de permissão pro script ser executado
+
+```bash
+  chmod +x script.py
 ```
 
