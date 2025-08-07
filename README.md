@@ -8,7 +8,7 @@ Ele envolve a criação e configuração de um servidor localmente, automação 
 
  - [Instalando o NGINX](#Instalando-o-NGINX)
  - [Ativando o NGINX](#Ativando-o-NGINX)
- - [Configurando o SystemD](#Configurando-o-DystemD)
+ - [Configurando o SystemD](#Configurando-o-SystemD)
  - [Pagina WEB](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
  - [Criando o Bot do Telegram](#Criando-o-Bot-do-Telegram)
  - [Criando o Script de Monitoramento](#Criando-o-Script-de-Monitoramento)
@@ -107,11 +107,11 @@ Crie o script e coloque o conteúdo nele
   sudo nano script.py
 ```
 
-## Automatizando o Script e Registros(logs)
-
 Agora de permissão pro script ser executado
 
 ```bash
   chmod +x script.py
 ```
+
+## Automatizando o Script e Registros(logs)
 
