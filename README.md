@@ -12,7 +12,8 @@ Ele envolve a criação e configuração de um servidor localmente, automação 
  - [Página Web](Página-Web)
  - [Criando o Bot do Telegram](#Criando-o-Bot-do-Telegram)
  - [Criando o Script de Monitoramento](#Criando-o-Script-de-Monitoramento)
- - [Automatizando o Script e Registros(logs)](#Automatizando-o-Script-e-Registros(logs))
+ - [Automatizando o Script e Registros](#Automatizando-o-Script-e-Registros)
+ - [Teste Final](#Teste-Final)
 
 
 ## Instalando o NGINX
@@ -41,6 +42,17 @@ Agora habilite ele para iniciar junto com a inicialização do sistema:
 ```bash
   sudo systemctl enable nginx
 ```
+
+Apos isso, acesse no seu navegador com o IP da sua máquina:
+
+```bash
+   http://<IP>
+```
+
+Se o serviço estiver funcionando, aparecerá uma página web semelhante a essa:
+
+<img width="598" height="237" alt="image" src="https://github.com/user-attachments/assets/9b156741-ad07-41e6-92e8-982b63ac7e14" />
+
 
 ## Configurando o SystemD
 
@@ -79,6 +91,17 @@ Para teste se está reinciando automaticamente:
 
 ## Página Web
 
+Para modificar a página web, entre no diretório padrão para arquivos web:
+
+```bash
+   cd /var/www/html
+```
+
+Dentro desse diretório podemos colocar o 'index.html' e o 'style.css'.
+
+- Meu .html: 
+- Meu .css:
+
 ## Criando o Bot do Telegram
 
 Na barra de busca do Telegram execute '@BotFather' e crie um bot a partir dele:
@@ -113,7 +136,7 @@ Agora de permissão pro script ser executado:
   chmod +x script.py
 ```
 
-## Automatizando o Script e Registros(logs)
+## Automatizando o Script e Registros
 
 Edite a lista de tarefas:
 
@@ -132,3 +155,29 @@ Verifique se o agendamento foi feito corretamente
 ```bash
   sudo crontab -l
 ```
+
+## Teste Final
+
+Após feito todas as confu=igurações e os passos anteriores, basta apenas testar.
+
+Derrube o servidor com:
+
+```bash
+  sudo pkill-9 nginx
+```
+
+Ou desligue o servidor:
+
+```bash
+  sudo systemctl stop nginx
+```
+
+Com isso, o servidor web deve cair e retornar uma mensagem pro telegram.
+
+<img width="705" height="314" alt="image" src="https://github.com/user-attachments/assets/5ae2978e-6c28-4d71-bd93-2142ee25de88" /><br>
+
+E resgistrará no log do seu script.
+
+<img width="681" height="190" alt="image" src="https://github.com/user-attachments/assets/a016c866-9585-4540-b38a-4a24ad178300" />
+
+
