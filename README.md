@@ -160,7 +160,7 @@ Verifique se o agendamento foi feito corretamente
 
 ## Teste Final
 
-Após feito todas as confu=igurações e os passos anteriores, basta apenas testar.
+Após feito todas as configurações e os passos anteriores, basta apenas testar.
 
 Derrube o servidor com:
 
