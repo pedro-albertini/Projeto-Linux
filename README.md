@@ -99,8 +99,8 @@ Para modificar a página web, entre no diretório padrão para arquivos web:
 
 Dentro desse diretório podemos colocar o 'index.html' e o 'style.css'.
 
-- Meu .html: 
-- Meu .css:
+- Meu .html: [index.html](index.html)
+- Meu .css: [style.css](style.css)
 
 ## Criando o Bot do Telegram
 
