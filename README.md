@@ -31,7 +31,7 @@ Agora instale o NGINX:
 ```
 ## Ativando o NGINX
 
-Apos a instalação, o primeiro passo é iniciar o serviço NGINX:
+Após a instalação, o primeiro passo é iniciar o serviço NGINX:
 
 ```bash
   sudo systemctl start nginx
@@ -43,7 +43,7 @@ Agora habilite ele para iniciar junto com a inicialização do sistema:
   sudo systemctl enable nginx
 ```
 
-Apos isso, acesse no seu navegador com o IP da sua máquina:
+Após isso, acesse no seu navegador com o IP da sua máquina:
 
 ```bash
    http://<IP>
@@ -135,6 +135,8 @@ Agora de permissão pro script ser executado:
 ```bash
   sudo chmod +x script.py
 ```
+
+- Meu código Python: [monitoramento.py](monitoramento.py)
 
 ## Automatizando o Script e Registros
 
