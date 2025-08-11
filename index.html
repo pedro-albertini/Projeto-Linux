@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Linux</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Projeto Linux</h1>
+        <p>Configuração de Servidor Web com Monitoramento</p>
+    </header>
+    <section class="container">
+        <h2>Sobre o Projeto</h2>
+        <p>Ele envolve a criação e configuração de um servidor localmente, automação de monitoramento e notificações via telegrama. 
+            Sempre que houver dúvidas ou desligamentos do servidor web, o script enviará automaticamente uma notificação 
+            a cada minuto alertando sobre o problema via telegrama.</p>
+    </section>
+    <section class="container features">
+        <h2>Requisitos</h2>
+        <ul>
+            <li>Configuração do servidor web</li>
+            <li>Monitoramento e notificações</li>
+            <li>Registros</li>
+            <li>Automação</li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Instalação e Ativação do NGINX</h2>
+        <pre><code class="bash">
+        # Instalar o nginx
+        sudo apt-get install
+
+        # Iniciar o sistema nginx
+        sudo systemctl start nginx
+
+        # Ativar o sistema nginx
+        sudo systemctl enable nginx
+
+        </code></pre>
+    </section>
+
+    <section class="container">
+        <h2>Código python de monitoramento do sistema e notificação:</h2>
+        <pre><code class="python3">
+            import requests
+            from datetime import datetime
+
+            URL = "http://172.22.64.106"
+            TOKEN = "7573522611:AAFwDQCxhd2VD1uF6nop_xiYT6g6thrvBKg"
+            CHAT_ID = "6801410508"
+            MENSAGEM = "ALERTA!! Site fora do ar!"
+
+            def enviar_mensagem_telagram(mensagem):
+                    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+                    data = {"chat_id": CHAT_ID, "text": mensagem}
+                    resposta = requests.post(url, data=data)
+                    return resposta.json()
+
+            def monitoramento_site():
+                    try:
+                            resposta = requests.get(URL, timeout=10)
+                            if resposta.status_code == 200:
+                                    print(f"{datetime.now()} - Site está online")
+                            else:
+                                    enviar_mensagem_telagram(MENSAGEM)
+                                    print(f"{dateime.now()} - Site fora do ar")
+                    except requests.RequestException as e:
+                            print(f"{datetime.now()} - Site fora do ar")
+                            enviar_mensagem_telagram(MENSAGEM)
+
+            if __name__ == "__main__":
+                    monitoramento_site()
+        </code></pre>
+    </section>
+
+    <section class="container">
+        <h2>Automação e Registro na log</h2>
+        <pre><code class="bash">
+        # Edite a lista de tarefas
+        crontab -e
+
+        # Adicione a tarefa e guarde o registro no arquivo.log
+        * * * * * /usr/bin/python3 /home/pedro/monitoramento.py >> /var/log/monitoramento.log
+
+
+        </code></pre>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por Pedro Albertini | 2025</p>
+    </footer>
+</body>
+</html>
