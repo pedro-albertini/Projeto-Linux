@@ -133,7 +133,7 @@ Crie o script e coloque o conteúdo nele:
 Agora de permissão pro script ser executado:
 
 ```bash
-  chmod +x script.py
+  sudo chmod +x script.py
 ```
 
 ## Automatizando o Script e Registros
