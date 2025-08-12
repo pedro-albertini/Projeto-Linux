@@ -4,6 +4,16 @@
 Esse projeto faz parte do programa de bolsas da Compass UOL na trilha de DevSecOps.
 
 Ele envolve a criação e configuração de um servidor localmente, automação de monitoramento e notificações via telegram. Sempre que ouver quedas ou desligamento do servidor web, o script enviará automaticamente uma notificação a cada minuto alertando sobre o problema via telegram.
+
+## Tecnologias Utilizadas
+
+- WSL (Windows Subsystem for Linux) - para rodar o ambiente Linux dentro do Windows
+- Python 3 - para o script de monitoramento, linguagem principal
+- Biblioteca "requests" - para realizar requisições HTTP
+- API do Telegram Bot - para enviar mensagens de alerta
+- Crontab (Linux) - para agendar a execução do script
+- Nginx - servidor web, serviço que está sendo monitorado
+    
 ## Indice
 
  - [Instalando o NGINX](#Instalando-o-NGINX)
