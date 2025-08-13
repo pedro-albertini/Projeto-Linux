@@ -190,6 +190,7 @@ Com isso, o servidor web deve cair e retornar uma mensagem pro telegram.
 
 E resgistrará no log do seu script.
 
-<img width="681" height="190" alt="image" src="https://github.com/user-attachments/assets/a016c866-9585-4540-b38a-4a24ad178300" />
+<img width="762" height="173" alt="image" src="https://github.com/user-attachments/assets/4354cf88-5d95-4487-a032-280364e6e1e2" />
+
 
 
